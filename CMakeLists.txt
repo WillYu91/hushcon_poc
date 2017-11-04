@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 2.6.2)
+get_filename_component(DIR_NAME "${CMAKE_SOURCE_DIR}" NAME)
+project (${DIR_NAME})
+
+set (CMAKE_CXX_STANDARD 14)
+OPTION(CMAKE_MACOSX_RPATH "USE OSX Rpaths" OFF)
+
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -DDEBUG")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -DDEBUG")
+
+set(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -DNDEBUG")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build")
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build")
+
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+set_property(GLOBAL PROPERTY XCODE_ATTRIBUTE_DEBUG_INFORMATION_FORMAT "DWARF with dSYM File")
+
+add_subdirectory(Demo1)
+add_subdirectory(Demo2)
+add_subdirectory(Demo3)
+add_subdirectory(Demo4)
+add_subdirectory(Victim)
+add_subdirectory(SharedObjectPayload)
