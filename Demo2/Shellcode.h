@@ -22,7 +22,7 @@ typedef struct _ShellcodeArgs
     ExitProcess_t pExitProcess;
     Printf_t pPrintf;
     
-    char path[76] = "/Users/test/Desktop/defcon_poc_build/build/Debug/libSharedObjectPayload.so";
+    char path[76] = "/Users/test/Desktop/hushcon_poc_build/build/Debug/libSharedObjectPayload.so";
     char modS[28] = "Path: %s loaded at 0x%llx\n";
 } ShellcodeArgs;
 
